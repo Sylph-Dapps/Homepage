@@ -6,6 +6,16 @@
     <link rel="shortcut icon" href="favicon.ico">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-155159612-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-155159612-1');
+    </script>
+
     <style>
       @media (max-width: 480px) {
         html {
@@ -22,139 +32,191 @@
           font-size: 14px;
         }
       }
-      body {
-        font-family: 'Roboto', sans-serif;
-        background: #eee;
+      * {
+        box-sizing: border-box;
+        margin-block-start: 0;
+        margin-block-end: 0;
+        margin-inline-start: 0;
+        margin-inline-end: 0;
+      }
+      html {
         margin: 0;
         padding: 0;
+        height: 100%;
+        font-family: 'Roboto', sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      body:before {
+        content: "";
+        display: block;
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100vh;
+        z-index: -10;
+        background: url('background.jpg') no-repeat center center; /* From https://pixabay.com/photos/clouds-cumulus-sky-nature-dramatic-2329680/ */
+        background-attachment: fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+      }
+      /*Edge*/
+      @supports ( -ms-accelerator:true ) 
+      {
+        html {
+          overflow: hidden;
+          height: 100%;    
+        }
+        body {
+          overflow: auto;
+          height: 100%;
+        }
+      }
+      /*Ie 10/11*/
+      @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) 
+      {
+        html  {
+          overflow: hidden;
+          height: 100%;
+        }
+        body  {
+          overflow: auto;
+          height: 100%;
+        }
+      }
+
+      body {
+        color: white;
+        margin: 0;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+      }
+      a, a:visited, a:active {
+        color: white;
       }
       header {
-        font-family: 'Montserrat', sans-serif;
-
-        background: #2282f7;
-        background: -moz-linear-gradient(top,  #2282f7 0%, #49a9e5 40%);
-        background: -webkit-linear-gradient(top,  #2282f7 0%,#49a9e5 40%);
-        background: linear-gradient(to bottom,  #2282f7 0%,#49a9e5 40%);
-        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2282f7', endColorstr='#49a9e5',GradientType=0 );
-
         color: white;
-        padding-top: 20px;
-        padding-bottom: 20px;
-        margin-bottom: 10px;
-        text-align: center;
+        padding: 30px;
+        margin-bottom: 1em;
       }
       header h1 {
-        font-size: 2em;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 2.5em;
+        margin-bottom: 0.5em;
         text-shadow: 1px 1px rgba(0,0,0);
       }
       header h2 {
         font-size: 1.25em;
+        font-weight: normal;
+        margin-bottom: 0.5em;
       }
       header a, header a:visited, header a:active {
         color: white;
       }
       .links {
-        margin: 0px auto;
-        max-width: 640px;
-        padding: 20px 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: flex-end;
+        height: 100%;
       }
       .link {
         display: flex;
         flex-direction: column;
-        align-items: center;
-        margin-bottom: 3em;
-      }
-      .link .app-img {
         width: 100%;
-        height: 200px;
-        margin-bottom: 1em;
-        background-size: cover;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        box-shadow: 5px 5px rgba(0,0,0,.5);
-        text-decoration: none;
-        font-family: 'Montserrat', sans-serif;
-        text-align: center;
-        font-size: 24px;
-        color: white;
+        max-width: 500px;
+        border: 2px solid white;
+        padding: 20px;
         text-shadow: 0px 0px 4px rgba(0,0,0,.9);
+        text-decoration: none;
+        height: 125px;
+        justify-content: center;
       }
-      a.app-img:visited, a.app-img:active {
-        color: white;
+      @supports (backdrop-filter: blur(10px)) {
+        .link {
+          -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+        }
       }
-      .avow .app-img {
-        background: rgb(8, 79, 103) url('avow.jpg') no-repeat center center;
+      @supports not (backdrop-filter: blur(10px)) {
+        .link {
+          background-color: rgba(.25, .25, .25, 0.25);
+        }
       }
-      .quoteth .app-img {
-        background: rgb(101, 121, 153) url('quoteth.jpg') no-repeat 10% 20%;
+
+      .link:not(:last-child) {
+        margin-bottom: 1em;
       }
-      .pixie .app-img {
-        background: rgb(69, 102, 52) url('pixie.jpg') no-repeat center center;
+      .link.avow:hover {
+        background: rgba(8, 79, 103, .5);
       }
-      .link .info {
-        text-align: center;
+      .link.quoteth:hover {
+        background: rgba(101, 121, 153, .5);
+      }
+      .link.pixie:hover {
+        background: rgba(69, 102, 52, .5);
       }
       .link .info .name {
-        font-weight: bold;
-        font-size: 1.5em;
-        display: none;
-      }
-      .link .info .name a, .link .info .name a:visited, .link .info .name a:active {
-        color: black;
-        text-decoration: none;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 2em;
+        margin-bottom: .25em;
       }
       .link .info .description {
         font-size: 1.25em;
       }
       footer {
-        padding: 10px 10px 20px 10px;
-        max-width: 600px;
-        margin: 0px auto;
-        text-align: center;
+        text-shadow: 0px 0px 5px rgba(0,0,0);
+        text-align: left;
       }
-      footer a, footer a:visited, footer a:active {
-        color: black;
+      @media (max-width: 900px) {
+        header {
+          display: block;
+          margin: 0px auto;
+          padding: 30px;
+          margin-bottom: 2em;
+        }
+        .links {
+          display: block;
+          margin: 0px auto;
+          padding-left: 30px;
+          padding-right: 30px;
+          margin-bottom: 100px;
+        }
+        .link {
+          height: unset;
+        }
       }
     </style>
   </head>
   <body>
     <header>
       <h1>Sylph Dapps</h1>
-      <h2>A collection of fun, little applications built on Ethereum</h2>
-      <p>By <a href="https://michaelvandaniker.com" target="_blank">Michael VanDaniker</a></p>
+      <h2>Building fun, little applications on Ethereum</h2>
     </header>
     <div class="links">
-      <div class="avow link">
-        <a class="app-img" href="avow">
-          <div class="avow-img"><div>A V O W</div></div>
-        </a>
+      <a class="avow link" href="avow">
         <div class="info">
-          <div class="name"><a href="avow">Avow</a></div>
+          <div class="name">A V O W</div>
           <div class="description">An Ethereum message signer and signature verifier</div>
         </div>
-      </div>
-      <div class="quoteth link">
-        <a class="app-img" href="quoteth">
-          <div class="quoteth-img"><div>Q U O T E T H</div></div>
-        </a>
+      </a>
+      <a class="quoteth link" href="quoteth">
         <div class="info">
-          <div class="name"><a href="quoteth">Quoteth</a></div>
+          <div class="name">Q U O T E T H</div>
           <div class="description">Learn about Ethereum signatures while testing your knowledge of famous quotes</div>
         </div>
-      </div>
-      <div class="pixie link">
-        <a class="app-img" href="pixie">
-          <div class="pixie-img"><div>P I X I E</div></div>
-        </a>
+      </a>
+      <a class="pixie link" href="pixie">
         <div class="info">
-          <div class="name"><a href="pixie">Pixie</a></div>
+          <div class="name">P I X I E</div>
           <div class="description">Collaborative pixel art on Ethereum</div>
         </div>
-      </div>
+      </a>
     </div>
-    <footer>
-      <a href="https://github.com/Sylph-Dapps" target="_blank">Github</a>
-    </footer>
   </body>
 </html>
