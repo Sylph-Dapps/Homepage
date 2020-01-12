@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Getting started with Status - Sylph Dapps</title>
+    <meta name="viewport" content="width=device-width">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link href="/assets/css/base.css" rel="stylesheet">
+    <style>
+      html {
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        font-family: 'Roboto', sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        background: white;
+      }
+      body {
+        background: white;
+      }
+
+      .content {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        padding-bottom: 10px;
+        background: white;
+      }
+      .ss {
+        display: block;
+        width: 300px;
+        height: 616.656px;
+        background: white;
+        border: 1px solid black;
+        box-shadow: 5px 5px rgba(0,0,0,.5);
+        margin: 0 auto 4em auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="content">
+      <h1 style="margin-bottom: 0em;">Getting started with Status</h1>
+      <h2 style="font-style:italic; margin-top: 0.25em;">And using it to paint in Pixie</h2>
+      <div>
+        <p>There are several mobile Ethereum-enabled browsers (also known as wallets) that you can use to paint in <a href="https://sylphdapps.com/pixie">Pixie</a> and to access other Dapps. Here are instructions on how to set up one of them &mdash; Status on Android &mdash; and how to use Pixie with it.</p>
+        <p>While each wallet and operating system works slightly differently, the same general steps can be used to get started with other wallets and on other operating systems.</p>
+        <p style='font-style:italic'>Pixie has been tested on a variety of browsers on desktops but has only been tested with Status on Android and with Metamask on Android. If you're using an iOS device or another wallet on Android, Pixie might not work as expected.</p>
+        <p>The steps:</p>
+        <ol>
+          <li><a href="#install-status">Install Status</a></li>
+          <li><a href="#create-account">Create an account</a></li>
+          <li><a href="#switch-to-ropsten">Switch to the Ropsten testnet</a></li>
+          <li><a href="#obtain-ropsten-eth">Obtain some Ropsten ETH</a></li>
+          <li><a href="#paint-in-pixie">Paint in Pixie</a></li>
+        </ol>
+
+        <a name="install-status"></a>
+        <h2>Install Status</h2>
+        <p>Your first step is to visit <a href="https://status.im/get" target="_blank">status.im/get</a> on your device and tap on the "Android App" link.</p>
+        <img class="ss" src="status-home-page.jpg"/>
+        <p>This will take you to the Play Store page for Status. Because Status is still in beta, you might be prompted to accept a beta tester agreement before the Play Store will display the "Install" button. Once you do, tap "Install".</p>
+        <img class="ss" src="play-store.jpg"/>
+
+        <a name="create-account"></a>
+        <h2>Create an account</h2>
+        <p>Once you've installed Status, open the app, and you'll be greated with a landing page prompting to you create an account.</p>
+        <img class="ss" src="create-account.jpg"/>
+        <p>Choose a password for your account. You'll enter this password every time you confirm an Ethereum transaction, which, in Pixie, will be each time you want to paint a cell.</p>
+        <img class="ss" src="password.jpg"/>
+        <p>Re-enter your password.</p>
+        <img class="ss" src="confirm-password.jpg"/>
+        <p>Choose a name for your Status account. Status autogenerates a name for you, so this step is optional.</p>
+        <img class="ss" src="name.jpg"/>
+        <p>Acknowlege that you understand the risks of using the beta version of Status.</p>
+        <p>What do these risks have to do with Pixie? The color of each Pixie cell is stored on the Ethereum network and each transaction sent to the network requires a small amount of cryptocurrency known as ETH to compensate owners of the computers that power network. Bugs in Status could affect your access to your account and its cryptocurrency. Note that because Pixie is still in a test phase, it is deployed to a test version of the Ethereum network where the ETH has no monetary value. If your account only has testnet ETH it, and you lose access to it, you've lost nothing of any monetary value.</p>
+        <img class="ss" src="confirm-beta.jpg"/>
+        <p>After dismissing the beta acknowledgement prompt you'll be greeted by a welcome page. Tap "Get started".</p>
+        <img class="ss" src="get-started.jpg"/>
+        <p>Along the bottom of the screen are buttons to access Status's three main features and its settings ("Profile"). Those features are:</p>
+        <ul>
+          <li>Sending private messages to other Status users (the "Chat" button)</li>
+          <li>A web browser that has the ability to write to the Ethereum network (the "DApps" button)</li>
+          <li>Sending and receving cryptocurrency (the "Wallet" button)</li>
+        </ul>
+        <p>Status will drop you into the "Chat" feature by default.</p>
+        <img class="ss" src="chat.jpg"/>
+
+        <a name="switch-to-ropsten"></a>
+        <h2>Switch to the Ropsten testnet</h2>
+        <p>We're going to point Status to the test version of the Ethereum network where Pixie is currently deployed: Ropsten. Click the "Profile" button to switch over to the settings. </p>
+        <img class="ss" src="settings.jpg"/>
+        <p>Scroll to the bottom and tap "Advanced"</p>
+        <img class="ss" src="advanced.jpg"/>
+        <p>Toggle on "Developer mode". This will cause several new entries to appear in the setttings menu.</p>
+        <img class="ss" src="developer-mode.jpg"/>
+        <p>Tap "Network" and then "Ropsten with upstream RPC".</p>
+        <img class="ss" src="network-settings.jpg"/>
+        <p>Tap the "Connect" button. This will connect you the Ropsten network but will also sign you out of your Status account.</p>
+        <img class="ss" src="ropsten.jpg"/>
+        <p>Enter your password to sign back in.</p>
+        <img class="ss" src="sign-in-again.jpg"/>
+
+        <a name="obtain-ropsten-eth"></a>
+        <h2>Obtain some Ropsten ETH</h2>
+        <p>Now let's get some Ropsten ETH into your account. Tap "Wallet". You'll be greeted with a landing page. Tap the "Let's get set up" button to continue.</p>
+        <img class="ss" src="wallet-setup.jpg"/>
+        <p>You use your password to prove to Status that you are the owner of your account. For an extra layer of security, Status provides a way for <i>it</i> to prove to <i>you</i> that it is Status and not another application masquerading as Status: 3 words that only you and Status know.</p>
+        <p>Each time you are asked to confirm a transaction request Status will display these three words. If the words you're shown don't match the ones Status is displaying during this setup step, you should not confirm the transaction.</p>
+        <img class="ss" src="three-words.jpg"/>
+        <p>After dismissing this prompt, you'll be taken to the main page for the wallet. Here you can see your balances of various cryptocurrencies. Tap "Receive".</p>
+        <img class="ss" src="wallet-landing.jpg"/>
+        <p>Your Ethereum account is identified by a long string of characters that begins with "0x". This is known as the account's "address". Long tap on the address to bring up the context menu and copy the address to your clipboard.</p>
+        <img class="ss" src="copy-address.jpg"/>
+        <p>Because Ropsten testnet ETH (ETHro) has no value, there are a handful of services, known as "faucets", that give away Ropsten ETH. Open your web browser and visit <a href="https://faucet.ropsten.be/" _target="_blank">faucet.ropsten.be</a> and paste your address into the form.</p>
+        <img class="ss" src="faucet.jpg"/>
+        <p>Tap "Send me test Ether" and your Ropsten ETH will be on its way.</p>
+        <img class="ss" src="faucet-confirmation.jpg"/>
+        <p>After about a minute, you'll have 1.5 ETHro. Head back to the Status wallet, and pull down to refresh the page until you see your new balance.</p>
+        <img class="ss" src="eth-ro-balance.jpg"/>
+
+        <a name="paint-in-pixie"></a>
+        <h2>Paint in Pixie</h2>
+        <p>Now that we're on the correct network and have some ETH, we can start using Pixie. Tap the "DApps" button at the bottom of the screen and type in "sylphdapps.com/pixie" in the address bar.</p>
+        <img class="ss" src="visit-dapp.jpg"/>
+        <p>Tap on the "Paint!" button.</p>
+        <img class="ss" src="pixie-home.jpg"/>
+        <p>Pixie will request permission from Status to know your Ethereum account's address. Pixie uses your address to populate the "from" field in the transaction requests it will build as you paint. Allow the connection. You'll only need to do this once. </p>
+        <img class="ss" src="allow-connection.jpg"/>
+        <p>Choose a color from the panel at the bottom of the screen and tap on a cell you want to paint that color.</p>
+        <img class="ss" src="paint.jpg"/>
+        <p>Now Status will show you a transaction request that, when approved by you and confirmed by the Ethereum network, will paint the cell you selected its new color. You should see a note at the top of the page that you're connected to the Ropsten network, and the "Amount" field should be 0. If either of these are not the case, reject the transaction by clicking the X in the top left corner. If everything looks good, tap "Sign transcation".</p>
+        <img class="ss" src="sign-transaction.jpg"/>
+        <p>Status will display your three security words and prompt you for your password. If the three words match the ones you saw while you were setting up Status, enter your password and tap "Sign transaction".</p>
+        <img class="ss" src="sign-transaction-prompt.jpg"/>
+        <p>Your transaction will be sent to the Ropsten Ethereum network and you'll be shown a confirmation message. Click "Done" to dismiss the message and return to Pixie.</p>
+        <img class="ss" src="transaction-confirmation.jpg"/>
+        <p>Pixie will display its own confirmation message, which you can also dismiss.</p>
+        <img class="ss" src="pixie-confirmation.jpg"/>
+        <p>The computers that back the Ethereum network will now work to confirm your transaction. This take about 15 seconds when the Roptsen network is under normal load but takes longer when the network is being heavily utilized. While the transaction is pending, your pixel will pulse with your chosen color. When the transaction is finalized, your pixel will be fully recolored.</p>
+        <img class="ss" src="colored-cell.jpg"/>
+        <p>Now color some more pixels. Happy painting!</p>
+      </div>
+    </div>
+  </body>
+</html>
